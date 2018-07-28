@@ -1,0 +1,49 @@
+ML
+---------------
+-ML is a method of Data Analysis that automates analytical model building.
+-Using algos that iteratively learn from data, ML allows computers to find hidden insights 
+without being explicitly programmed where to look.
+
+Data Acquisition --> Data Cleaning -->
+
+----------------
+Supervised --> Labeled Data --> Predict a label based on known features
+----------------
+-algos are trained using labeled examples
+-input where desired output is known
+
+- Through methods like Classification, Regression, Prediction and Gradient Boosting, it uses patterns to predict values of labels on unlabeled data
+
+- Commonly used in apps where historical data predicts likely future events
+-> Ex Fraud Card activities 
+
+----------------
+Unsupervised --> Unlabeled Data --> Trying to group together similar data points based on features
+----------------
+-It is used against the data that has no historical labels
+-System has no right answer. Algo must figure it out.
+- Goal is to explore data and find some structure within.
+- Or it can find the main attributes that seperate customer segments from each other.
+- Also used to segment text topics
+-----------------------
+Reinforcement Learning --> Algo learns to perform action from experience
+-----------------------
+- often used in robotics, gaming and navigation.
+- algo discovers through trial and error which actions yeild the greatest rewards.
+
+Components:
+-Agent -- Learner or Decision Maker
+-Environment -- everything agent interacts with
+-Actions -- what agent can do
+
+-Objective for agent to choose actions that maximize the expected reward over given amount of time.
+-Agent will reach the goal much faster by following a good policy.
+-Goal is to learn best policy.
+
+
+
+
+
+
+
+
