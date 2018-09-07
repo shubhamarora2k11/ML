@@ -1,0 +1,34 @@
+conda/pip install seaborn
+
+Distribution Plots:
+
+import seaborn as sns
+%matplotlib inline
+
+dataset = sns.load_dataset('tips')
+dataset.head()
+
+Uni- variable: DISTPLOT
+------------------------
+sns.distplot(dataset['column'])
+sns.distplot(dataset['column'], kde=false)
+sns.distplot(dataset['column'], bins=30)
+
+2-variable
+----------
+sns.jointplot(x='col1', y='col2', data= dataset)
+sns.jointplot(x='col1', y='col2', data= dataset, kind='hex')
+sns.jointplot(x='col1', y='col2', data= dataset, kind='reg')
+sns.jointplot(x='col1', y='col2', data= dataset, kind='kde')
+
+PAIRPLOT- pair wise relations across all numerical colimns
+-----------------------------------------------
+sns.pairplot(dataset)
+sns.pairplot(dataset, hue='categorical column like sex')
+sns.pairplot(dataset, hue='categorical column like sex', palette='coolwarm')
+
+
+
+
+
+
