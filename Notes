@@ -1,0 +1,137 @@
+ML
+---------------
+-ML is a method of Data Analysis that automates analytical model building.
+-Using algos that iteratively learn from data, ML allows computers to find hidden insights 
+without being explicitly programmed where to look.
+
+Data Acquisition --> Data Cleaning --> Model training and Building
+
+----------------
+Supervised --> Labeled Data --> Predict a label based on known features
+----------------
+-algos are trained using labeled examples
+-input where desired output is known
+
+- Through methods like Classification, Regression, Prediction and Gradient Boosting, it uses patterns to predict values of labels on unlabeled data
+
+- Commonly used in apps where historical data predicts likely future events
+-> Ex Fraud Card activities 
+
+----------------
+Unsupervised --> Unlabeled Data --> Trying to group together similar data points based on features
+----------------
+- It is used against the data that has no historical labels
+- System has no right answer. Algo must figure it out.
+- Goal is to explore data and find some structure within.
+- Or it can find the main attributes that seperate customer segments from each other.
+- Also used to segment text topics
+
+-----------------------
+Reinforcement Learning --> Algo learns to perform action from experience
+-----------------------
+- often used in robotics, gaming and navigation.
+- algo discovers through trial and error which actions yeild the greatest rewards.
+
+Components:
+-Agent -- Learner or Decision Maker
+-Environment -- everything agent interacts with
+-Actions -- what agent can do
+
+-Objective for agent to choose actions that maximize the expected reward over given amount of time.
+-Agent will reach the goal much faster by following a good policy.
+-Goal is to learn best policy.
+
+----------------------------------------------------------------------------
+
+Scikit-Learn
+---------------
+conda/pip install scikit-learn
+
+from sklearn.family import Model
+
+--
+from sklearn.linear_model import Linear Regression
+
+model = LinearRegression()
+print(model)
+
+
+OLD from sklearn.cross_validation import train_test_split
+NEW from sklearn.model_selection import train_test_split
+
+1.splitting test and training data
+X_train,X_test,y_train, y_test = train_test_split(X,y,test_size=0.3)
+
+2.Train/fit the model
+model.fit(X_train,y_train)
+
+3. predictions = model.predict(X_test)
+
+4. Evaluation
+
+scikit-learn algorithm cheatsheet
+
+LinearRegression
+----------------
+Francis Galton 1800s
+son's height tended to be closer to overall average height of all people.
+
+Goal is to minimize the vertical distance between all data points and our line.
+So for 'best line' we are attempting to minimize the distances between all points and their 
+distance to our line
+
+Least squares method- fitted by minimizing the sum of squares of residuals(y-dist from best line)
+
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+%matplotlib inline
+
+df = pd.read_csv('USA_Housing.csv')
+df.head()
+
+df.info()
+df.describe()
+df.columns
+
+sns.pairplot(df) 
+sns.distplot(df['Price'])
+df.corr()
+sns.heatmap(df.corr())
+sns.heatmap(df.corr(), annot=True)
+
+X= features
+y= target column
+
+from sklearn.cross_validation import train_test_split
+
+train_test_split SHIFT+TAB
+
+X_train,X_test,y_train, y_test = train_test_split(X,y,test_size=0.4, random_state=101)
+
+from sklearn.linear_model import LineaRegression
+lm =  LinearRegression()
+lm.fit(X_train, y_train)
+
+print(lm.intercept_)
+print(lm.coef_)
+
+cdf = pd.DataFrame(lm.coef,X.columns, columns=['Coeff'])
+cdf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
